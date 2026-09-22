@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS propio -->
+    <link href="css/ejemplo.css" rel="stylesheet">
+
+    <title>Regex Validator</title>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         ENCABEZADO
+    ====================================== -->
+
+    <header class="encabezado">
+
+        <div class="container text-center">
+
+            <div class="logo">
+                REGEX
+            </div>
+
+            <h1>
+                Regex Validator
+            </h1>
+
+            <p>
+                Valida información utilizando
+                expresiones regulares en JavaScript.
+            </p>
+
+        </div>
+
+    </header>
+
+
+
+    <main class="container py-5">
+
+
+        <!-- =====================================
+             SELECCIÓN
+        ====================================== -->
+
+        <section class="text-center mb-5">
+
+            <h2 class="fw-bold">
+                ¿Qué deseas validar?
+            </h2>
+
+            <p class="text-muted">
+                Selecciona una opción para comenzar.
+            </p>
+
+
+            <div class="row justify-content-center g-3 mt-3">
+
+
+                <!-- CORREO -->
+
+                <div class="col-12 col-sm-6 col-lg-3">
+
+                    <input
+                        type="radio"
+                        class="btn-check"
+                        name="tipoValidacion"
+                        id="opcionCorreo"
+                        value="correo"
+                        autocomplete="off"
+                    >
+
+                    <label
+                        class="opcion"
+                        for="opcionCorreo"
+                    >
+
+                        <span class="opcion-icono">
+                            📧
+                        </span>
+
+                        <span>
+                            Correo electrónico
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- TELÉFONO -->
+
+                <div class="col-12 col-sm-6 col-lg-3">
+
+                    <input
+                        type="radio"
+                        class="btn-check"
+                        name="tipoValidacion"
+                        id="opcionTelefono"
+                        value="telefono"
+                        autocomplete="off"
+                    >
+
+                    <label
+                        class="opcion"
+                        for="opcionTelefono"
+                    >
+
+                        <span class="opcion-icono">
+                            📱
+                        </span>
+
+                        <span>
+                            Número telefónico
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- USUARIO -->
+
+                <div class="col-12 col-sm-6 col-lg-3">
+
+                    <input
+                        type="radio"
+                        class="btn-check"
+                        name="tipoValidacion"
+                        id="opcionUsuario"
+                        value="usuario"
+                        autocomplete="off"
+                    >
+
+                    <label
+                        class="opcion"
+                        for="opcionUsuario"
+                    >
+
+                        <span class="opcion-icono">
+                            👤
+                        </span>
+
+                        <span>
+                            Nombre de usuario
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- CONTRASEÑA -->
+
+                <div class="col-12 col-sm-6 col-lg-3">
+
+                    <input
+                        type="radio"
+                        class="btn-check"
+                        name="tipoValidacion"
+                        id="opcionPassword"
+                        value="password"
+                        autocomplete="off"
+                    >
+
+                    <label
+                        class="opcion"
+                        for="opcionPassword"
+                    >
+
+                        <span class="opcion-icono">
+                            🔐
+                        </span>
+
+                        <span>
+                            Contraseña
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             VALIDADOR
+        ====================================== -->
+
+        <section
+            id="validador"
+            class="validador card shadow-sm"
+        >
+
+            <div class="card-body p-4 p-md-5">
+
+
+                <!-- TÍTULO -->
+
+                <div class="text-center mb-4">
+
+                    <div
+                        id="iconoTipo"
+                        class="icono-principal"
+                    >
+                        📋
+                    </div>
+
+                    <h2
+                        id="tituloTipo"
+                        class="fw-bold"
+                    >
+                        Selecciona una opción
+                    </h2>
+
+                    <p
+                        id="descripcionTipo"
+                        class="text-muted"
+                    >
+                        Selecciona uno de los tipos de datos
+                        para comenzar la validación.
+                    </p>
+
+                </div>
+
+
+
+                <!-- FORMULARIO -->
+
+                <div id="formulario">
+
+
+                    <div class="mb-3">
+
+                        <label
+                            for="dato"
+                            id="labelDato"
+                            class="form-label fw-bold"
+                        >
+                            Dato a validar
+                        </label>
+
+                        <input
+                            type="text"
+                            id="dato"
+                            class="form-control form-control-lg"
+                            placeholder="Selecciona primero una opción"
+                            disabled
+                        >
+
+                    </div>
+
+
+                    <div class="d-grid gap-2 d-md-flex">
+
+                        <button
+                            type="button"
+                            id="btnValidar"
+                            class="btn btn-primary btn-lg flex-grow-1"
+                            disabled
+                        >
+                            ✓ Validar
+                        </button>
+
+                        <button
+                            type="button"
+                            id="btnLimpiar"
+                            class="btn btn-outline-secondary btn-lg"
+                        >
+                            Limpiar
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================
+                     RESULTADO
+                ================================== -->
+
+                <div
+                    id="resultado"
+                    class="resultado mt-4"
+                ></div>
+
+
+
+                <!-- =================================
+                     INFORMACIÓN DE LA REGEX
+                ================================== -->
+
+                <div
+                    id="informacionRegex"
+                    class="informacion-regex mt-4"
+                    style="display: none;"
+                >
+
+                    <h5 class="fw-bold">
+                        Expresión regular utilizada
+                    </h5>
+
+
+                    <div
+                        id="regexMostrada"
+                        class="regex-codigo"
+                    ></div>
+
+
+                    <h6 class="fw-bold mt-4">
+                        ¿Qué hace esta expresión?
+                    </h6>
+
+
+                    <p
+                        id="explicacionRegex"
+                        class="mb-0 text-muted"
+                    ></p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+
+    </main>
+
+
+
+
+    <!-- Bootstrap -->
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript propio -->
+    <script src="js/ejemplo.js"></script>
+
+</body>
+
+</html>

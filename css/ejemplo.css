@@ -1,0 +1,390 @@
+/* ==========================================
+   ESTILOS GENERALES
+========================================== */
+
+body {
+
+    background-color: #f5f7fb;
+
+    color: #212529;
+
+    font-family: Arial, sans-serif;
+
+}
+
+
+/* ==========================================
+   ENCABEZADO
+========================================== */
+
+.encabezado {
+
+    background: linear-gradient(
+        135deg,
+        #0d6efd,
+        #6610f2
+    );
+
+    color: white;
+
+    padding: 70px 20px;
+
+}
+
+
+.logo {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 65px;
+
+    height: 65px;
+
+    margin-bottom: 15px;
+
+    border-radius: 18px;
+
+    background-color: rgba(255, 255, 255, 0.2);
+
+    font-weight: bold;
+
+    font-size: 16px;
+
+}
+
+
+.encabezado h1 {
+
+    font-size: 45px;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+
+}
+
+
+.encabezado p {
+
+    font-size: 18px;
+
+    margin: 0;
+
+    opacity: 0.9;
+
+}
+
+
+/* ==========================================
+   OPCIONES DE VALIDACIÓN
+========================================== */
+
+.opcion {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    min-height: 150px;
+
+    padding: 20px;
+
+    background-color: white;
+
+    border: 2px solid #e9ecef;
+
+    border-radius: 15px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+    font-weight: 600;
+
+}
+
+
+.opcion:hover {
+
+    border-color: #0d6efd;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(13, 110, 253, 0.12);
+
+}
+
+
+.opcion-icono {
+
+    font-size: 38px;
+
+}
+
+
+/* Opción seleccionada */
+
+.btn-check:checked + .opcion {
+
+    color: #0d6efd;
+
+    background-color: #eef5ff;
+
+    border-color: #0d6efd;
+
+    box-shadow:
+        0 8px 20px rgba(13, 110, 253, 0.15);
+
+}
+
+
+/* ==========================================
+   VALIDADOR
+========================================== */
+
+.validador {
+
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    border: none;
+
+    border-radius: 18px;
+
+}
+
+
+.icono-principal {
+
+    font-size: 45px;
+
+    margin-bottom: 10px;
+
+}
+
+
+#tituloTipo {
+
+    font-size: 30px;
+
+}
+
+
+/* ==========================================
+   CAMPOS
+========================================== */
+
+.form-control {
+
+    border-radius: 10px;
+
+}
+
+
+.form-control:focus {
+
+    border-color: #0d6efd;
+
+    box-shadow:
+        0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+
+}
+
+
+/* ==========================================
+   BOTONES
+========================================== */
+
+.btn {
+
+    border-radius: 10px;
+
+    font-weight: 600;
+
+}
+
+
+/* ==========================================
+   RESULTADO
+========================================== */
+
+.resultado {
+
+    display: none;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    font-weight: 600;
+
+}
+
+
+.resultado.exito {
+
+    display: block;
+
+    background-color: #d1e7dd;
+
+    color: #0f5132;
+
+    border: 1px solid #badbcc;
+
+}
+
+
+.resultado.error {
+
+    display: block;
+
+    background-color: #f8d7da;
+
+    color: #842029;
+
+    border: 1px solid #f5c2c7;
+
+}
+
+
+/* ==========================================
+   INFORMACIÓN DE REGEX
+========================================== */
+
+.informacion-regex {
+
+    padding: 20px;
+
+    background-color: #f8f9fa;
+
+    border-radius: 12px;
+
+    border-left: 5px solid #6610f2;
+
+}
+
+
+.regex-codigo {
+
+    padding: 15px;
+
+    background-color: #212529;
+
+    color: #72e0ff;
+
+    border-radius: 8px;
+
+    font-family: monospace;
+
+    font-size: 14px;
+
+    overflow-x: auto;
+
+    word-break: break-word;
+
+}
+
+
+/* ==========================================
+   TARJETAS INFORMATIVAS
+========================================== */
+
+.info-card {
+
+    height: 100%;
+
+    padding: 25px;
+
+    background-color: white;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.05);
+
+}
+
+
+.info-icono {
+
+    font-size: 35px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.info-card h4 {
+
+    font-weight: bold;
+
+}
+
+
+.info-card p {
+
+    color: #6c757d;
+
+    margin-bottom: 0;
+
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer {
+
+    margin-top: 60px;
+
+    padding: 30px 15px;
+
+    background-color: #212529;
+
+    color: white;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 576px) {
+
+    .encabezado {
+
+        padding: 50px 20px;
+
+    }
+
+
+    .encabezado h1 {
+
+        font-size: 35px;
+
+    }
+
+
+    #tituloTipo {
+
+        font-size: 25px;
+
+    }
+
+}
